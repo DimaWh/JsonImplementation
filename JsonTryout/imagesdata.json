@@ -1,4 +1,3 @@
-// Export image data as a module
 const images = [
     { "url": "https://picsum.photos/id/1015/400/300" },
     { "url": "https://picsum.photos/id/1025/400/300" },
@@ -9,4 +8,6 @@ const images = [
 ];
 
 export default images;
+
+
 // or export { images };
