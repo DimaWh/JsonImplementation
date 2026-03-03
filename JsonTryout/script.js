@@ -104,6 +104,12 @@ function searchKeyword() {
     }
 }
 
+// ========== THIRD PROJECT: Save Essay ==========
+function clearEssay() {
+    document.getElementById('essayBox').value = '';
+    localStorage.removeItem('savedEssay');
+}
+
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', () => {
     // First project
@@ -118,4 +124,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') searchKeyword();
         });
     }
+
+    // Third project - load saved essay and auto-save on every keystroke
+    const essayBox = document.getElementById('essayBox');
+    const saved = localStorage.getItem('savedEssay');
+    if (saved) essayBox.value = saved;
+
+    essayBox.addEventListener('input', () => {
+        localStorage.setItem('savedEssay', essayBox.value);
+    });
 });
